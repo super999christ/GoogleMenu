@@ -6,3 +6,8 @@
     margin-right: auto;
     font-size: 10px;
 } */
+
+.container {
+    display: flex;
+    justify-content: center;
+}
