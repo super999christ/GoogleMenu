@@ -1,0 +1,110 @@
+
+.tile {
+    touch-action: none;
+    -webkit-tap-highlight-color: transparent;
+    align-items: center;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: var(--tile-size);
+    opacity: 1;
+    outline: 0;
+    position: relative;
+    text-decoration: none;
+    transition-duration: .3s;
+    transition-property: left,top;
+    transition-timing-function: ease-in-out;
+    user-select: none;
+    width: var(--tile-size);
+    
+   
+}
+
+
+.icon-more-vert {
+    --cr-icon-image: url("./icon.png");
+}
+
+cr-icon-button {
+    --cr-icon-button-fill-color: var(--icon-button-color);
+    --cr-icon-button-size: 28px;
+    --cr-icon-button-transition: none;
+    margin: 4px 2px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .1s ease-in-out;
+}
+
+.tile-icon {
+    align-items: center;
+    background-color: var(--tile-background-color);
+    border-radius: 50%;
+    display: flex;
+    flex-shrink: 0;
+    
+    height: var(--icon-size);
+    justify-content: center;
+    margin-top: 16px;
+    width: var(--icon-size);
+}
+
+.tile-icon img {
+    height: 24px;
+    width: 24px;
+}
+
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.query-tile-icon {
+    mask-image: url("./queryicon.png");
+    background-color: var(--google-grey-400);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    height: 24px;
+    width: 24px;
+    
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.title-ltr {
+    direction: ltr;
+}
+
+.tile-title {
+    align-items: center;
+    border-radius: calc(var(--title-height)/ 2 + 2px);
+    color: var(--most-visited-text-color);
+    display: flex;
+    height: var(--title-height);
+    line-height: calc(var(--title-height)/ 2);
+    margin-top: 6px;
+    padding: 2px 8px;
+    width: 88px;
+}
+
+.tile-title span {
+    font-weight: 400;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: var(--most-visited-text-shadow);
+    white-space: nowrap;
+    width: 100%;
+}
+
+
+
+#dropdown-button-drop-start {
+    width: 5px;
+    height: 5px;
+}

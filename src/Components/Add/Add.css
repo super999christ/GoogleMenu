@@ -1,0 +1,26 @@
+.tile-title span {
+    font-weight: 400;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: var(--most-visited-text-shadow);
+    white-space: nowrap;
+    width: 100%;
+}
+
+.tile-title {
+    align-items: center;
+    border-radius: calc(var(--title-height)/ 2 + 2px);
+    color: var(--most-visited-text-color);
+    display: flex;
+    height: var(--title-height);
+    line-height: calc(var(--title-height)/ 2);
+    margin-top: 6px;
+    padding: 2px 8px;
+    width: 88px;
+}
+
+#element1, #element2 {
+    margin-left: auto;
+    margin-right: auto;
+}

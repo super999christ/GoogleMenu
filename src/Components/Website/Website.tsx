@@ -1,4 +1,4 @@
-import "./Linkedin.css";
+import "./Website.css";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import SplitButton from "react-bootstrap/SplitButton";
@@ -7,37 +7,22 @@ import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
 
-// function Linkedin() {
-//     return (
-       
-//             <a className="tile" aria-label="Linkedin" title="Linkedin" >
-//                 <button id="actionMenuButton" className="icon-more-vert" tabIndex={0} title="More actions" 
-//                 aria-disabled="false" role="button">                    
-//                     <div id="icon">
-//                         <div id="maskedImage"></div>
-//                     </div>
-//                 </button>
-//                 <div className="tile-icon">
-//                     <img draggable="false" src="/linkedin.png" />
-//                     <div className="query-tile-icon" draggable="false" hidden></div>
-//                 </div>
-//                 <div className="tile-title title-ltr">
-//                     <span>Linkedin</span>
-//                 </div>
-//             </a>
-        
-//     );
-// }
-
-function Linkedin() {
+const Website = ({websitename} : any) => {
     
     const [visible, setVisible] = useState<boolean>(true);
     const [show, setShow] = useState<boolean>(false);
 
-    const handleClick = (e: any) => {
-        //e.stopPropagation();
-        console.log("TOM he");
-    }
+    let firstval = websitename;
+    const [firval, firSetVal] = useState<String>(firstval);
+
+    let secondval: string = "https://www." + firstval + ".com";
+    const [secval, setSecVal] = useState<String>(secondval);
+
+    //console.log(websitename);
+
+    // const handleClick = (e: any) => {
+    //     //e.stopPropagation();
+    // }
     
     const handleRemove = () => {
         setVisible(false);
@@ -56,11 +41,11 @@ function Linkedin() {
         (visible === true) ? (
         <div className="aaa" >
         
-            <div className="mb-2" >
+            <div className="mb" >
                 {['start'].map(
                 (direction) => (
                     <DropdownButton
-                    onClick={(e) => handleClick(e)}
+                    //onClick={(e) => handleClick(e)}
                     // as={ButtonGroup}
                     key={direction}
                     id={`dropdown-button-drop-${direction}`}
@@ -78,14 +63,20 @@ function Linkedin() {
                                 <Form>
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                                         <Form.Label>Name</Form.Label>
-                                        <Form.Control
+                                        {/* <Form.Control
                                             //placeholder="name@example.com"
                                             autoFocus
-                                        />
+                                            onChange={e => setValue(e.target.value)}
+                                            value = {websitename}
+                                        /> */}
+                                        <br />
+                                        <input value={firval as any}  name="Name" onChange={e => firSetVal(e.target.value)} />
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                         <Form.Label>URL</Form.Label>
-                                        <Form.Control type="email" as="textarea" rows={1} />
+                                        {/* <Form.Control type="email" as="textarea" rows={1} value="https://www.linkedin.com" /> */}
+                                        <br />
+                                        <input value={secval as any} name="URL" onChange={e => setSecVal(e.target.value)} />
                                     </Form.Group>
                                 </Form>
                             </Modal.Body>
@@ -105,10 +96,10 @@ function Linkedin() {
                 ),
                 )}
             </div>
-            <a className="tile" aria-label="Linkedin" title="Linkedin" href="#">
+            <a className="tile" aria-label="Linkedin" title="Linkedin" href="https://www.linkedin.com/">
                 <div className="tile-icon">
-                <img draggable="false" src="/linkedin.png" />
-                <div className="query-tile-icon" draggable="false" hidden></div>
+                    <img draggable="false" src="/linkedin.png" />
+                    <div className="query-tile-icon" draggable="false" hidden></div>
                 </div>
                 <div className="tile-title title-ltr">
                     <span>Linkedin</span>
@@ -126,4 +117,4 @@ function Linkedin() {
  
 
 
-export default Linkedin;
+export default Website;
